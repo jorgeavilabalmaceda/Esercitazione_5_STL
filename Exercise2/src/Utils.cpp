@@ -198,4 +198,41 @@ namespace PolygonalLibrary
 
         return true;
     }
+    bool CheckEdges(const PolygonalMesh& mesh, const double& eps)
+    {
+    bool check = true;
+
+    for (unsigned int i = 0; i < mesh.NumCell1Ds; ++i)
+    {
+        //id extrema
+        unsigned int id1 = mesh.Cell1DsExtrema(0, i);
+        unsigned int id2 = mesh.Cell1DsExtrema(1, i);
+
+       
+        auto it1 = id1;
+        auto it2 = id2;
+     
+        unsigned int idx1 = it1;
+        unsigned int idx2 = it2;
+
+        double x1 = mesh.Cell0DsCoordinates(0, idx1);
+        double y1 = mesh.Cell0DsCoordinates(1, idx1);
+        double x2 = mesh.Cell0DsCoordinates(0, idx2);
+        double y2 = mesh.Cell0DsCoordinates(1, idx2);
+
+        double length = calcolo::EdgeLength(x1, y1, x2, y2);
+
+        if (length <= eps)
+        {
+            std::cerr << "Warning: Edge " << i << " sotto tolleranza eps: (" << length << " ≤ " << eps << ")\n";
+            check = false;
+        }
+    }
+    if(check){
+      cout << "segmenti validi" << endl;
+    }
+
+    return check;
+    }
+
 }
