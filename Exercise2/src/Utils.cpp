@@ -61,7 +61,8 @@ namespace PolygonalLibrary
           Vector2d coord;
 
           // Read the values
-          converter >>  id >> marker >> mesh.Cell0DsCoordinates(0, id) >> mesh.Cell0DsCoordinates(1,id); 
+          char tmp;
+          converter >>  id >>tmp>> marker >>tmp>>mesh.Cell0DsCoordinates(0,id)>>tmp>>mesh.Cell0DsCoordinates(1,id); 
          mesh.Cell0DsId.push_back(id);
 
          // markers
@@ -119,8 +120,9 @@ namespace PolygonalLibrary
             unsigned int id;
             unsigned int marker;
             Vector2i vertices;
+            char tmp;
 
-            converter >>  id >> marker >>  mesh.Cell1DsExtrema(0, id) >>  mesh.Cell1DsExtrema(1, id);
+            converter >>  id >>tmp>> marker >>tmp >> mesh.Cell1DsExtrema(0, id) >> tmp >> mesh.Cell1DsExtrema(1, id);
             mesh.Cell1DsId.push_back(id);
 
             //mesh.Cell1DsExtrema.col(index) = vertices;

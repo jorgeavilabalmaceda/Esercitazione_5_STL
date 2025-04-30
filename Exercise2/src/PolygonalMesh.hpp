@@ -24,8 +24,8 @@ struct PolygonalMesh
     
     unsigned int NumCell2Ds = 0; 
     std::vector<unsigned int> Cell2DsId = {}; 
-    std::vector<array<unsigned int, 3>> Cell2DsVertices = {}; ///< Cell2D Vertices indices, size 1 x NumberCell2DVertices[NumberCell2D]
-    std::vector<array<unsigned int, 3>> Cell2DsEdges = {}; ///< Cell2D Cell1D indices, size 1 x NumberCell2DEdges[NumberCell2D]
+    std::vector<array<unsigned int, 3>> Cell2DsVertices = {}; 
+    std::vector<array<unsigned int, 3>> Cell2DsEdges = {}; 
     
 };
 

@@ -58,23 +58,6 @@ int main()
                                  {},
                                  cell1Ds_properties);
     }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 /*
@@ -94,11 +77,11 @@ int main()
 
         cell0Ds_properties[0].Data = cell0Ds_marker.data();
 
-        //call the function without checking the return value
+        
         utilities.ExportPoints("./Cell0Ds.inp", mesh.Cell0DsCoordinates, cell0Ds_properties);
     }
 
-    // Exporting Cell 1D data (edges)
+ 
     {
         vector<Gedim::UCDProperty<double>> cell1Ds_properties(1);
         cell1Ds_properties[0].Label = "Marker";
@@ -112,7 +95,7 @@ int main()
 
         cell1Ds_properties[0].Data = cell1Ds_marker.data();
 
-        // Just call the function without checking the return value
+       
         utilities.ExportSegments("./Cell1Ds.inp", mesh.Cell0DsCoordinates, mesh.Cell1DsExtrema, {}, cell1Ds_properties);
     }
     */
