@@ -21,5 +21,10 @@ bool ImportCell0Ds(PolygonalMesh& mesh);
 bool ImportCell1Ds(PolygonalMesh& mesh);
 
 bool ImportCell2Ds(PolygonalMesh& mesh);
+
 bool CheckEdges(const PolygonalMesh& mesh, const double& eps);
+
+//bool CheckAreas(const PolygonalMesh& mesh, const double& eps);
+
+
 }

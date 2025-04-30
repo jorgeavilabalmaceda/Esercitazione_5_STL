@@ -17,6 +17,8 @@ int main()
         cerr << "Mesh import failed. Check file paths or formats." << endl;
         return 1;
     }
+    
+    
     Gedim::UCDUtilities utilities;
     {
         vector<Gedim::UCDProperty<double>> cell0Ds_properties(1);
@@ -58,8 +60,10 @@ int main()
                                  {},
                                  cell1Ds_properties);
     }
-    
     const double eps = numeric_limits<double>::epsilon();
     CheckEdges(mesh,eps);
+    //CheckAreas(mesh,eps);
+    
+
     return 0;
 }

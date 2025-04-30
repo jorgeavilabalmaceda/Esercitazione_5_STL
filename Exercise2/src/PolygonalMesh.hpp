@@ -22,10 +22,12 @@ struct PolygonalMesh
     Eigen::MatrixXi Cell1DsExtrema = {};
     std::map<unsigned int, list<unsigned int>> MarkerCell1Ds = {}; 
     
-    unsigned int NumCell2Ds = 0; 
+    unsigned int NumCell2Ds = 0;
     std::vector<unsigned int> Cell2DsId = {}; 
-    std::vector<array<unsigned int, 3>> Cell2DsVertices = {}; 
-    std::vector<array<unsigned int, 3>> Cell2DsEdges = {}; 
+    map<unsigned int, list<unsigned int>> NumVert2Ds = {};
+    std::vector<vector<unsigned int>> Cell2DsVertices = {}; 
+    map<unsigned int, list<unsigned int>> NumEdges2Ds= {}; 
+    std::vector<vector<unsigned int>> Cell2DsEdges = {}; 
     
 };
 
